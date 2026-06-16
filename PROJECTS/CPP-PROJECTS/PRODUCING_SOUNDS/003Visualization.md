@@ -1,6 +1,8 @@
-# Siren Synthesizer (C++)
+# Producing a Square Wave
 
-This project is a low-level audio synthesizer that generates a smooth, frequency-modulated siren from scratch. Instead of using high-level "Beep" functions, this program writes raw PCM data directly into a memory buffer and streams it to the Windows audio hardware.
+Basically, what this code aims to achive is to create a square wave of sound. As the name implies, a square wave is a type of wave that litereally looks like a square, instead of those typical smooth sine waves.
+
+![An Image Of A Square Wave](Images/square_wave.png)
 
 ## How It Works: The Physics of the Speaker Cone
 
