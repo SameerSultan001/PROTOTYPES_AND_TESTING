@@ -14,9 +14,11 @@ At the physical level, your sound card is constantly moving the speaker cone bac
 - **The Resting Point (`0`):** The cone is in its neutral, center position.
 - **Max Displacement (`32767` to `-32768`):** The cone is pushed out to its limit or pulled back to its limit.
 
+<div align="center">
+    <img src="/Images/speaker_cone.png" width="500" alt="An Image Of A Square Wave">
+</div>
 
-
-By filling the buffer with a sine wave, we command the speaker to oscillate back and forth smoothly, creating a pure tone. By changing the frequency over time, we create the siren effect.
+By filling the buffer with a square wave (alternating values of max and min positions), we command the speaker to oscillate back and forth, creating a sound.
 
 ## The Problem: "Phase Tearing"
 When changing frequency dynamically, many developers make the mistake of using absolute time ($t$) in their sine calculation: `sin(w * t)`. 
