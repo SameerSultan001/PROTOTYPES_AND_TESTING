@@ -35,25 +35,14 @@ Now, lets look at these 882 samples. Out of these 882 samples, the first half, t
 
 
 
-## The Solution: Phase Accumulation
-To make the siren sound professional, we use a **Phase Accumulator**. 
-Instead of calculating the absolute position from time, we calculate a tiny "step" for every single sample. 
-
-1. **Calculate Step:** We determine how much the wave should rotate based on the current frequency.
-2. **Accumulate:** We add that tiny step to a running total (`runningPhase`).
-3. **Move:** We use that running total to define the cone's position.
-
-This ensures the speaker cone is always moved to the next logical position from where it just was, creating a perfectly continuous, fluid sound.
-
 ## Technical Details
 * **Language:** C++
 * **API:** Win32 `waveOut` API
 * **Sample Rate:** 44,100 Hz (CD Quality)
 * **Bit Depth:** 16-bit signed integers
-* **Synthesis Method:** Phase-accumulated frequency modulation (FM)
 
 ## Compilation
 Ensure you have the Windows Multimedia library linked:
 ```bash
 # Using g++
-g++ main.cpp -o siren.exe -lwinmm
+g++ Square_Wave.cpp -o Square_Wave.exe -lwinmm
